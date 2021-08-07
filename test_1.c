@@ -1,41 +1,24 @@
-//#define  _CRT_SECURE_NO_WARNINGS 1
+//#define _CRT_SECURE_NO_WARNINGS 1
 //#include<stdio.h>
-////操作符的学习
-////int main()
-////{
-////	//int x = 16;
-//	//int y = 2.0;
-//	//x=x << 1;
-//	///*右移操作符：
-//	//* 算术右移
-//	//* 右边丢弃，左边补原符号位
-//	//* 逻辑右移
-//	//* 右边丢弃，左边补0
-//	//*/
-////	int a = -1;
-////	//存储到内存中的是补码（反码+1）
-////	//-1的补码算术右移一位，符号位不变
-////	//a = a >> 1;
-////	//a = a << 1;
-////	//左边丢弃，右边补0
-////	printf("%d", a);
-////	return 0;
-////}
+//#include<assert.h>
+//char* my_Strlen(char* str1, char* str2)
+//{
+//	char* ret = str2;
+//	assert(*str1 != NULL);
+//	assert(*str2 != NULL);
+//	
+//	while (*str2++ = *str1++)
+//	{
+//		;
+//	}
+//	return ret;
+//}
 //int main()
 //{
-//	//&
-//	//|
-//	int a = 3;
-//	int b = 5;
-//	//int c = a & b;//1
-//	//32wei
-//	/*int c = a | b;*///7
-//	//printf("%d", c);
-//	//1
-//	//按位异或
-//	//相同为0，相异为1
-//	int c = a ^ b;
-//	printf("%d", c);//6
-//
+//	char str1[20] ;
+//	scanf("%s", str1);
+//	
+//	char str2[20] = "########";
+//	printf("%s\n", my_Strlen(str1, str2));
 //	return 0;
 //}
