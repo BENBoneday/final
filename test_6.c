@@ -1,77 +1,29 @@
+//#define _CRT_SECURE_NO_WARNINGS 1
 //#include<stdio.h>
-//#include<stdlib.h>
-//#include<time.h>
-//#include<string.h>
-//void swap(int* x, int* y)
+//#include<math.h>
+//int sqrtjudge(int num)
 //{
 //	int temp = 0;
-//	temp = *x;
-//	*x = *y;
-//	*y = temp;
-//}
-//int main()
-//{
-//	int a = 10;
-//	int b = 20;
-//	swap(&a, &b);
-//	printf("%d%d", a, b);
-//	//char arr1[] = "123";
-//	//char arr2[] = "456";
-//	////strcpy(arr2, arr1);
-//	//memset(arr2,'g',6);
-//	//printf("%s", arr2);
-//	return 0;
-//}
-//void menu()
-//{
-//	printf("*****************************\n");
-//	printf("****1.PLAY *****2.EXIT ******\n");
-//	printf("*****************************\n");
-//}
-//void game()
-//{
-//	int input = 0;
-//	int random_num = rand() % 100 + 1;
-//	while (1)
+//	int temp1 = 0;
+//	temp = (int)sqrt(num+100.00);
+//	temp1 = (int)sqrt(num + 168.00);
+//	if (((temp * temp) == (num + 100)) && ((temp1 * temp1) == (num + 168)))
 //	{
-//		printf("请输入：\n");
-//		scanf("%d", &input);
-//		if (random_num>input)
-//		{
-//			printf("猜小了！\n");
-//		}
-//		else if (random_num < input)
-//		{
-//			printf("猜大了！\n");
-//		}
-//		else 
-//		{
-//			printf("恭喜，猜中了！\n");
-//			break;
-//		}
+//		return 1;
 //	}
+//	else return 0;
 //}
 //int main()
 //{
-//	int input = 0;
-//	srand((unsigned int)time(NULL));
-//	do
+//	int i = 0;
+//	for (i = 0; i <= 100000; i++)
 //	{
-//		printf("请输入：\n");
-//		menu();
-//		scanf("%d", &input);
-//		switch (input)
+//		int ret = sqrtjudge(i);
+//		if (ret == 1)
 //		{
-//		case 1:
-//			game();
+//			printf("这个数是:%d ", i);
 //			break;
-//		case 0:
-//			break;
-//		default:
-//			printf("请重新输入:\n");
-//			break;
-//		}
-//	} 	while (input);
-//		
+//		}	
+//	}
 //	return 0;
 //}
