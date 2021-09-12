@@ -2,62 +2,69 @@
 #include<stdio.h>
 #include<string.h>
 #define N 3
-void sort(int arr[N][20],int button)
+typedef struct stu
 {
-	int i, j,k;
+	char string[20];
+}stu;
+int cmp_string(const void* e1, const void* e2)
+{
+	return strcmp((stu*)e1, (stu*)e2);
+}
+void swap(char* buffer1, char* buffer2, int width,int Num)
+{
 	char temp;
-	for (i = 0; i < N; i++)
+	int i;
+	for (i = 0; i < width; i++)
 	{
-		for (j = N - 1; j > i; j--)
-		{
-			if (button == 1)
-			{
-				if (strcmp(arr[i] , arr[j])>0)
-				{
-					for (k = 0; k < 20; k++)
-					{
-						temp = arr[i][k];
-						arr[i][k] = arr[j][k];
-						arr[j][k] = temp;
-					}
-				}
-			}
-			if (button == 0)
-			{
-				if (strcmp(arr[j], arr[i])<0)
-				{
-					for (k = 0; k < 20; k++)
-					{
-						temp = arr[i][k];
-						arr[i][k] = arr[j][k];
-						arr[j][k] = temp;
-					}
-				}
-			}
-		}
+		temp = *buffer1;
+		*buffer1 = *buffer2;
+		*buffer2 = temp;
+		buffer1++;
+		buffer2++;
 	}
-	for (i = 0; i < N; i++)
+}
+void sort(void* arr, int sz, int width, int (*cmp_string)(void* e1, void* e2),int Num)
+{
+	int i = 0;
+	for (i = 0; i < sz - 1; i++)
 	{
-		printf("µÚ%d¸ö×Ö·û´®\n", i + 1);
-		for (j = 0; j < 20; j++)
+		int j = 0;
+		for (j = 0; j < sz - 1 - i; j++)
 		{
-			
-			printf("%s\n", arr[i][j]);
+			if (Num == 1)
+			{
+				if (cmp_string((char*)arr + j * width, (char*)arr + (j + 1) * width) > 0)
+				{
+					swap((char*)arr + j * width, (char*)arr + (j + 1) * width, width, Num);
+				}
+			}
+			if (Num == 0)
+			{
+				if (cmp_string((char*)arr + j * width, (char*)arr + (j + 1) * width) < 0)
+				{
+					swap((char*)arr + j * width, (char*)arr + (j + 1) * width, width, Num);
+				}
+			}
 		}
 	}
 }
 int main()
 {
-	char arr[N][20];
-	int i = 0;
-	int button;
+	stu arr[N];
+	int i;
+	int Num;
 	for (i = 0; i < N; i++)
 	{
-		printf("ÇëÊäÈëµÚ%d¸ö×Ö·û´®\n",i+1);
-		scanf("%s", arr[i]);
+		printf("ÇëÊäÈë×Ö·û´®\n");
+		scanf("%s", arr[i].string);
 	}
 	printf("µÝÔö°´1£¬µÝ¼õ°´0\n");
-	scanf("%d", &button);
-	sort(arr[N][20],button);
+	scanf("%d", &Num);
+	int sz = sizeof(arr) / sizeof(arr[0]);
+	sort(arr, sz, sizeof(arr[0]), cmp_string,Num);
+	for (i = 0; i < N; i++)
+	{
+		printf("×Ö·û´®ÅÅÐòÎª£º%s\n", arr[i].string);
+	}
 	return 0;
 }
