@@ -5,8 +5,8 @@ char* my_strstr(const char* p1,const char* p2)
 {
 	assert(p1!=NULL);
 	assert(p2!=NULL);
-	char* s1 = p1;
-	char* s2 = p2;
+	char* s1 = NULL;
+	char* s2 = NULL;
 	char* cur = p1;
 	if (*p2 == '\0')
 	{
